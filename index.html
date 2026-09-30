@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Приглашение на чаепитие | Кафедра информатики ТувГУ</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons & Canvas Confetti -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            parchment: '#FAF7F2',
+            creme: '#F4EEE5',
+            latte: '#EBDDCB',
+            sandborder: '#DFCFC0',
+            goldaccent: '#B88A44',
+            lightgold: '#D4AF37',
+            mocha: '#5C4738',
+            deepespresso: '#2C221E',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .bg-warm-canvas {
+      background-color: #F7F3EC;
+      background-image: 
+        radial-gradient(#D8CBC0 0.8px, transparent 0.8px),
+        radial-gradient(#D8CBC0 0.8px, #F7F3EC 0.8px);
+      background-size: 24px 24px;
+      background-position: 0 0, 12px 12px;
+    }
+
+    .luxury-shadow {
+      box-shadow: 
+        0 25px 60px -15px rgba(44, 34, 30, 0.08),
+        0 2px 6px rgba(44, 34, 30, 0.03),
+        0 0 0 1px rgba(184, 138, 68, 0.18);
+    }
+
+    .flip-num {
+      display: inline-block;
+      transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.2s ease;
+    }
+    .flip-num.updating {
+      transform: translateY(-4px);
+      opacity: 0.55;
+    }
+
+    @keyframes gentleFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-enter { animation: gentleFadeIn 0.35s ease-out forwards; }
+  </style>
+</head>
+
+<body class="bg-warm-canvas min-h-screen text-deepespresso flex items-center justify-center p-4 sm:p-6 md:p-10 font-sans selection:bg-latte selection:text-deepespresso antialiased">
+
+  <main class="w-full max-w-[620px] bg-parchment/95 backdrop-blur-md rounded-[2.5rem] p-6 sm:p-10 luxury-shadow border border-sandborder relative overflow-hidden transition-all duration-300">
+    
+    <!-- Атмосферное мягкое свечение по углам -->
+    <div class="absolute -top-32 -right-32 w-72 h-72 bg-[#EFE3D3]/60 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -left-32 w-80 h-80 bg-[#E5D5C1]/40 rounded-full blur-3xl pointer-events-none"></div>
+
+    <!-- Заголовок университета -->
+    <header class="text-center pb-6 border-b border-sandborder relative z-10">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EFE8DC] border border-[#DDD0BF] text-[#785735] text-[11px] font-medium tracking-[0.18em] uppercase mb-4 shadow-sm">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-goldaccent"></i>
+        <span>Ко Дню учителя</span>
+      </div>
+
+      <h2 class="text-xs sm:text-[13px] font-semibold tracking-[0.24em] uppercase text-[#6B533F]">
+        Тувинский государственный университет
+      </h2>
+      <p class="text-[11px] sm:text-xs text-[#8E7259] font-medium tracking-[0.16em] uppercase mt-1 flex items-center justify-center gap-2">
+        <span>Кафедра информатики</span>
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-goldaccent/70"></span>
+        <span class="font-normal text-[#9B816B]">Кызыл</span>
+      </p>
+    </header>
+
+    <!-- Основной блок приглашения -->
+    <div class="text-center py-7 sm:py-8 relative z-10">
+      <div class="w-12 h-12 mx-auto rounded-full bg-[#EFE5D8] border border-[#DFCEBD] flex items-center justify-center text-goldaccent mb-3.5 shadow-sm">
+        <i data-lucide="coffee" class="w-5 h-5"></i>
+      </div>
+      <p class="font-serif italic text-xl sm:text-2xl text-[#8E6E50] mb-1 font-normal">
+        Сердечно приглашаем на
+      </p>
+      <h1 class="font-serif text-3xl sm:text-5xl text-deepespresso font-semibold tracking-tight leading-[1.15]">
+        Праздничное чаепитие
+      </h1>
+      <p class="text-mocha text-[14px] sm:text-[15.5px] font-normal mt-3.5 max-w-[480px] mx-auto leading-relaxed">
+        Дорогие преподаватели и наставники! В преддверии Дня учителя приглашаем собраться за чашкой традиционного тувинского чая и сладкими угощениями в тёплом кругу коллег.
+      </p>
+    </div>
+
+    <!-- Карточки деталей встречи -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 my-2 relative z-10">
+      <div class="bg-creme/90 border border-[#E4D8C8] rounded-2xl p-3.5 text-center transition hover:border-[#D1BFAB] hover:bg-[#F8F1E7]">
+        <div class="w-8 h-8 mx-auto rounded-full bg-[#E8DDD0] text-goldaccent flex items-center justify-center mb-1.5">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+        </div>
+        <span class="block text-[10px] uppercase font-semibold tracking-wider text-[#8A715C]">Дата</span>
+        <span class="text-[15px] sm:text-base font-semibold text-deepespresso">2 октября</span>
+      </div>
+
+      <div class="bg-creme/90 border border-[#E4D8C8] rounded-2xl p-3.5 text-center transition hover:border-[#D1BFAB] hover:bg-[#F8F1E7]">
+        <div class="w-8 h-8 mx-auto rounded-full bg-[#E8DDD0] text-goldaccent flex items-center justify-center mb-1.5">
+          <i data-lucide="clock" class="w-4 h-4"></i>
+        </div>
+        <span class="block text-[10px] uppercase font-semibold tracking-wider text-[#8A715C]">Время сбора</span>
+        <span class="text-[15px] sm:text-base font-semibold text-deepespresso">12:30</span>
+      </div>
+
+      <div class="bg-creme/90 border border-[#E4D8C8] rounded-2xl p-3.5 text-center transition hover:border-[#D1BFAB] hover:bg-[#F8F1E7]">
+        <div class="w-8 h-8 mx-auto rounded-full bg-[#E8DDD0] text-goldaccent flex items-center justify-center mb-1.5">
+          <i data-lucide="map-pin" class="w-4 h-4"></i>
+        </div>
+        <span class="block text-[10px] uppercase font-semibold tracking-wider text-[#8A715C]">Место</span>
+        <span class="text-[14px] sm:text-[14.5px] font-semibold text-deepespresso block truncate" title="УЛК-2, ауд. билбезню">
+          Ауд. таа шаа (УЛК-2)
+        </span>
+      </div>
+    </div>
+
+    <!-- Блок таймера обратного отсчета -->
+    <div class="mt-6 pt-6 border-t border-sandborder relative z-10 text-center">
+      <div class="flex items-center justify-center gap-2 mb-3.5">
+        <span class="h-[1px] w-6 bg-[#D8C7B5]"></span>
+        <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#836954]">
+          До 2 октября осталось:
+        </span>
+        <span class="h-[1px] w-6 bg-[#D8C7B5]"></span>
+      </div>
+      
+      <div class="grid grid-cols-4 gap-2.5 max-w-[430px] mx-auto">
+        <div class="bg-[#FAF5ED] border border-[#E5D7C7] rounded-2xl p-2.5 sm:p-3 shadow-[0_2px_8px_rgba(44,34,30,0.03)] text-center">
+          <span id="days" class="flip-num font-serif text-2xl sm:text-3xl font-bold text-deepespresso leading-none">00</span>
+          <span class="block text-[9px] uppercase font-medium text-[#8F7764] tracking-wider mt-1.5">Дней</span>
+        </div>
+
+        <div class="bg-[#FAF5ED] border border-[#E5D7C7] rounded-2xl p-2.5 sm:p-3 shadow-[0_2px_8px_rgba(44,34,30,0.03)] text-center">
+          <span id="hours" class="flip-num font-serif text-2xl sm:text-3xl font-bold text-deepespresso leading-none">00</span>
+          <span class="block text-[9px] uppercase font-medium text-[#8F7764] tracking-wider mt-1.5">Часов</span>
+        </div>
+
+        <div class="bg-[#FAF5ED] border border-[#E5D7C7] rounded-2xl p-2.5 sm:p-3 shadow-[0_2px_8px_rgba(44,34,30,0.03)] text-center">
+          <span id="minutes" class="flip-num font-serif text-2xl sm:text-3xl font-bold text-deepespresso leading-none">00</span>
+          <span class="block text-[9px] uppercase font-medium text-[#8F7764] tracking-wider mt-1.5">Минут</span>
+        </div>
+
+        <div class="bg-[#FAF5ED] border border-[#E5D7C7] rounded-2xl p-2.5 sm:p-3 shadow-[0_2px_8px_rgba(44,34,30,0.03)] text-center">
+          <span id="seconds" class="flip-num font-serif text-2xl sm:text-3xl font-bold text-goldaccent leading-none">00</span>
+          <span class="block text-[9px] uppercase font-medium text-[#8F7764] tracking-wider mt-1.5">Секунд</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Кнопка подтверждения через Google Форму -->
+    <div class="mt-7 pt-6 border-t border-sandborder relative z-10">
+      <a 
+        href="https://docs.google.com/forms/d/e/1FAIpQLSenum4odwHgN_JqDtimIpNyy8BymZb6L1wJCTfzTLehvW8bSQ/viewform?usp=publish-editor" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        id="rsvpBtn"
+        class="inline-flex items-center justify-center w-full px-7 py-3 rounded-xl bg-[#352720] hover:bg-[#251B16] text-[#FAF6F0] font-medium text-sm transition-all duration-200 shadow-md hover:shadow-lg active:scale-[0.98] cursor-pointer whitespace-nowrap"
+      >
+        <span>Я приду</span>
+        <i data-lucide="check" class="w-4 h-4 text-goldaccent ml-2"></i>
+      </a>
+
+      <p class="text-xs text-mocha mt-3 text-center">
+        Нажимая кнопку, вы перейдёте на форму подтверждения участия.
+      </p>
+    </div>
+
+  </main>
+
+  <script>
+    lucide.createIcons();
+
+    /**
+     * Расчет времени до 2 октября 00:00:00 (по местному времени Кызыла UTC+7)
+     */
+    function getTargetOctober2ndMidnight() {
+      const now = new Date();
+      let year = now.getFullYear();
+
+      let targetDate = new Date(`${year}-10-02T00:00:00+07:00`);
+
+      if (now.getTime() > targetDate.getTime()) {
+        year += 1;
+        targetDate = new Date(`${year}-10-02T00:00:00+07:00`);
+      }
+
+      return { targetDate, year };
+    }
+
+    const { targetDate: eventTargetDate } = getTargetOctober2ndMidnight();
+    const targetTimestamp = eventTargetDate.getTime();
+
+    let prevValues = { days: '', hours: '', minutes: '', seconds: '' };
+
+    function updateCard(id, value) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (prevValues[id] !== value) {
+        el.innerText = value;
+        el.classList.add('updating');
+        setTimeout(() => el.classList.remove('updating'), 200);
+        prevValues[id] = value;
+      }
+    }
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetTimestamp - now;
+
+      if (diff <= 0) {
+        updateCard('days', '00');
+        updateCard('hours', '00');
+        updateCard('minutes', '00');
+        updateCard('seconds', '00');
+        return;
+      }
+
+      const totalSec = Math.floor(diff / 1000);
+      const days = Math.floor(totalSec / (3600 * 24));
+      const hours = Math.floor((totalSec % (3600 * 24)) / 3600);
+      const minutes = Math.floor((totalSec % 3600) / 60);
+      const seconds = totalSec % 60;
+
+      updateCard('days', String(days).padStart(2, '0'));
+      updateCard('hours', String(hours).padStart(2, '0'));
+      updateCard('minutes', String(minutes).padStart(2, '0'));
+      updateCard('seconds', String(seconds).padStart(2, '0'));
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    /**
+     * Конфетти при клике на кнопку "Я приду"
+     */
+    document.getElementById('rsvpBtn').addEventListener('click', function() {
+      confetti({
+        particleCount: 50,
+        spread: 60,
+        origin: { y: 0.75 },
+        colors: ['#B88A44', '#D4AF37', '#EBDDCB', '#5C4738', '#F4EEE5']
+      });
+
+      setTimeout(() => {
+        confetti({
+          particleCount: 30,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0.1, y: 0.8 },
+          colors: ['#B88A44', '#D4AF37', '#EBDDCB']
+        });
+        confetti({
+          particleCount: 30,
+          angle: 120,
+          spread: 55,
+          origin: { x: 0.9, y: 0.8 },
+          colors: ['#B88A44', '#D4AF37', '#EBDDCB']
+        });
+      }, 200);
+    });
+  </script>
+</body>
+</html>
